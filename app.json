@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "521977f1-2679-43a6-849a-393bd73a6069"
+      }
+    },
+    "android": {
+      "package": "com.trdagbatu.lumisai"
+    }
+  }
+}
