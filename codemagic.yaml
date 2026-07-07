@@ -1,0 +1,19 @@
+workflows:
+  android-apk:
+    name: Lumisai Android APK Build
+    instance_type: linux
+    environment:
+      node: 18
+    scripts:
+      - name: Install PNPM 8
+        script: npm install -g pnpm@8
+      - name: Install Dependencies
+        script: pnpm install --no-frozen-lockfile
+      - name: Expo Prebuild
+        script: npx expo prebuild --platform android --skip-dependency-validation
+      - name: Build Android Release APK
+        script: |
+          cd android
+          ./gradlew assembleRelease
+    artifacts:
+      - android/app/build/outputs/apk/release/*.apk
